@@ -1,5 +1,5 @@
-use std::io::{self, BufRead};
 use std::collections::VecDeque;
+use std::io::{self, BufRead};
 
 use log::debug;
 
