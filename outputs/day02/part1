@@ -1,0 +1,4 @@
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/day2_part1`
+Depth: 1000, Forward: 1990
+Multiplied: 1990000

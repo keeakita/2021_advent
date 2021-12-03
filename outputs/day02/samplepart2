@@ -1,0 +1,5 @@
+   Compiling advent2021 v0.1.0 (/home/keea/workspace/rust/2021_advent)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.42s
+     Running `target/debug/day2_part2`
+Depth: 60, Forward: 15, Aim: 10
+Multiplied: 900
