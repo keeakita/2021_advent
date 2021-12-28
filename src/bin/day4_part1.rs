@@ -1,5 +1,5 @@
 use std::{
-    fmt::{Display, Debug},
+    fmt::{Debug, Display},
     io::{self, BufRead},
 };
 
@@ -30,8 +30,8 @@ struct BingoBoard {
     spaces: [[BingoSpace; BOARD_SIZE]; BOARD_SIZE],
     horiz_counts: [usize; BOARD_SIZE],
     vert_counts: [usize; BOARD_SIZE],
-//    diag_asc_count: usize,
-//    diag_desc_count: usize,
+    //    diag_asc_count: usize,
+    //    diag_desc_count: usize,
 }
 
 impl Display for BingoBoard {
@@ -84,19 +84,19 @@ impl BingoBoard {
             bingo = true;
         }
 
-//        if x == y {
-//            self.diag_desc_count += 1;
-//            if self.diag_desc_count >= BOARD_SIZE {
-//                bingo = true;
-//            }
-//        }
+        //        if x == y {
+        //            self.diag_desc_count += 1;
+        //            if self.diag_desc_count >= BOARD_SIZE {
+        //                bingo = true;
+        //            }
+        //        }
 
-//        if (BOARD_SIZE - 1 - x) == y {
-//            self.diag_asc_count += 1;
-//            if self.diag_asc_count >= BOARD_SIZE {
-//                bingo = true;
-//            }
-//        }
+        //        if (BOARD_SIZE - 1 - x) == y {
+        //            self.diag_asc_count += 1;
+        //            if self.diag_asc_count >= BOARD_SIZE {
+        //                bingo = true;
+        //            }
+        //        }
 
         bingo
     }

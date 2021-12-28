@@ -51,12 +51,12 @@ fn main() {
         let inst = Instruction::try_from(line.as_str()).expect("Failed to parse line");
 
         match inst.direction {
-            Direction::DOWN => {aim += inst.magnitude},
-            Direction::UP => {aim -= inst.magnitude},
+            Direction::DOWN => aim += inst.magnitude,
+            Direction::UP => aim -= inst.magnitude,
             Direction::FORWARD => {
                 forward += inst.magnitude;
                 depth += inst.magnitude * aim;
-            },
+            }
         };
     }
 

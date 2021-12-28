@@ -160,7 +160,7 @@ fn main() {
         debug!("\n{}", board);
     }
 
-    let mut call: Option<Int> = None;
+    let mut call;
     while boards.len() > 1 {
         call = calls.next();
         debug!("{:?} call", call);

@@ -35,7 +35,11 @@ fn filter_co2(ones: Int, zeros: Int) -> char {
     }
 }
 
-fn calculate(lines: &Vec<Vec<char>>, pos: usize, filter: &dyn Fn(Int, Int) -> char) -> Vec<Vec<char>> {
+fn calculate(
+    lines: &Vec<Vec<char>>,
+    pos: usize,
+    filter: &dyn Fn(Int, Int) -> char,
+) -> Vec<Vec<char>> {
     if lines.len() == 1 {
         return lines.clone();
     }
@@ -44,30 +48,40 @@ fn calculate(lines: &Vec<Vec<char>>, pos: usize, filter: &dyn Fn(Int, Int) -> ch
     let mut zeros = 0;
     for line in lines.iter() {
         match line[pos] {
-            '1' => { ones += 1; }
-            '0' => { zeros += 1; }
-            _ => { panic!("Not a valid digit") }
+            '1' => {
+                ones += 1;
+            }
+            '0' => {
+                zeros += 1;
+            }
+            _ => {
+                panic!("Not a valid digit")
+            }
         }
     }
 
     let next_lines: Vec<Vec<char>>;
     let filter_val: char = filter(ones, zeros);
-    next_lines = lines.iter().filter(|line|
-        line[pos] == filter_val
-    ).cloned().collect();
+    next_lines = lines
+        .iter()
+        .filter(|line| line[pos] == filter_val)
+        .cloned()
+        .collect();
 
     debug!("{:?}", next_lines);
     debug!("zeros: {}, ones: {}", zeros, ones);
-    return calculate(&next_lines, pos+1, filter);
+    return calculate(&next_lines, pos + 1, filter);
 }
 
 fn main() {
     env_logger::init();
 
     let lines: Vec<Vec<char>> = {
-        io::stdin().lock().lines()
-        .map(|l|l.unwrap().chars().collect())
-        .collect()
+        io::stdin()
+            .lock()
+            .lines()
+            .map(|l| l.unwrap().chars().collect())
+            .collect()
     };
 
     let oxygen = calculate(&lines, 0, &filter_o2);

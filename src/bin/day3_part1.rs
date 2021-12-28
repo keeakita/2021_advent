@@ -38,14 +38,14 @@ fn main() {
                 gamma_ones[i] += 1;
             } else if char == '0' {
                 gamma_zeros[i] += 1;
-            }  else {
+            } else {
                 panic!("not a valid digit!");
             }
         }
     }
 
     let mut gamma = String::with_capacity(gamma_ones.len());
-    let mut epsilon= String::with_capacity(gamma_ones.len());
+    let mut epsilon = String::with_capacity(gamma_ones.len());
     for (one_count, zero_count) in gamma_ones.iter().zip(gamma_zeros.iter()) {
         if one_count >= zero_count {
             gamma.push('1');
